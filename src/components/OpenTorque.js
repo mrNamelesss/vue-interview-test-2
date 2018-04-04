@@ -1,16 +1,19 @@
 import { Bar } from 'vue-chartjs'
+import TorqueProfileResource from '@/services/TorqueProfileResource'
 
 export default {
   name: 'OpenTorqueChart',
   extends: Bar,
   mounted() {
+    const openTorqueData = TorqueProfileResource.getOpenTorqueData(18)
+    const openTorqueAverage = openTorqueData.map((it) => it['AverageTorque'])
     this.renderChart({
-      labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+      labels: new Array(101).fill(0).map((_, i) => i), // [1..100]
       datasets: [
         {
-          label: 'GitHub Commits',
-          backgroundColor: '#f87979',
-          data: [40, 20, 12, 39, 10, 40, 39, 80, 40, 20, 12, 11]
+          label: 'Average open torque',
+          backgroundColor: '#4385f4',
+          data: openTorqueAverage
         }
       ]
     })
