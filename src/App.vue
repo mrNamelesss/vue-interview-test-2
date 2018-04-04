@@ -1,29 +1,53 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+    <div class="dev">
+      <button @click="toggleAll">Outline</button>
     </div>
     <router-view/>
   </div>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-#nav {
-  padding: 30px;
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-    &.router-link-exact-active {
-      color: #42b983;
+<script>
+export default {
+  name: 'app',
+  data: function() {
+    return {
+      styleId: null
+    }
+  },
+  methods: {
+    toggleAll() {
+      this.toggleOutline()
+    },
+    toggleOutline() {
+      if (this.styleId) {
+        const style = document.getElementById(this.styleId)
+        style.remove()
+        this.styleId = null
+      } else {
+        const style = document.createElement('style')
+        style.innerHTML = '* { outline: 1px solid rgba(0, 0, 0, 0.2); }'
+        style.id = this.styleId = 'outline-style';
+        document.head.append(style)
+      }
     }
   }
 }
+</script>
+
+<style lang="sass">
+@import './assets/styles/main'
+
+#app
+  min-height: 100vh
+  max-width: 1000px
+  margin: auto
+
+.dev
+  position: absolute
+  right: 0
+  opacity: 0.05
+  &:hover
+    opacity: 0.7
+
 </style>
