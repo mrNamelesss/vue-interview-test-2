@@ -20,8 +20,9 @@ export default new Router({
           component: AssetHealth,
           children: [
             {
-              path: 'torque-profile',
+              path: 'torque-profile/:id',
               name: 'torque-profile',
+              props: true,
               component: TorqueProfile
             }
           ]
@@ -30,7 +31,7 @@ export default new Router({
     },
     {
       path: '*',
-      redirect: '/asset-health/torque-profile'
+      redirect: '/asset-health/torque-profile/18'
     }
   ]
 })
