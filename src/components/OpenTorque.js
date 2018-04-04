@@ -7,6 +7,7 @@ export default {
   mounted() {
     const openTorqueData = TorqueProfileResource.getOpenTorqueData(18)
     const openTorqueAverage = openTorqueData.map((it) => it['AverageTorque'])
+    const openTorqueLast = openTorqueData.map((it) => it['LastTorque'])
     this.renderChart({
       labels: new Array(101).fill(0).map((_, i) => i), // [1..100]
       datasets: [
@@ -14,8 +15,23 @@ export default {
           label: 'Average open torque',
           backgroundColor: '#4385f4',
           data: openTorqueAverage
+        },
+        {
+          label: 'Last open torque',
+          backgroundColor: '#6aa0fb',
+          data: openTorqueLast
         }
       ]
-    })
+    }, {
+        //categoryPercentage: 0.1,
+        scales: {
+          xAxes: [{
+            stacked: true
+          }],
+          yAxes: [{
+            stacked: true
+          }]
+        }
+      })
   }
 }
