@@ -1,12 +1,18 @@
 <template>
   <div class="torque-profile-view">
     <h1>Torque Profile</h1>
+    <OpenTorque />
   </div>
 </template>
 
 <script>
+import OpenTorque from '@/components/OpenTorque.js'
+
 export default {
-  name: 'TorqueProfile'
+  name: 'TorqueProfile',
+  components: {
+    OpenTorque
+  }
 }
 </script>
 
