@@ -39,7 +39,8 @@ export default {
             },
             stacked: true
           }]
-        }
+        },
+        maintainAspectRatio: false
       })
   }
 }

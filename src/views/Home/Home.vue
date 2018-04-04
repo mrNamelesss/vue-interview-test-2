@@ -106,6 +106,9 @@ section
     display: flex
     align-items: center
     height: $top-height
+    background-color: $bg-light
+    border-bottom: 1px solid $border-color
+    border-top: 1px solid $border-color
   .content
     padding: 20px
 

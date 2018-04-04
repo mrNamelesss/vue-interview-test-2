@@ -39,5 +39,6 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="sass">
-
+h3
+  color: #333
 </style>

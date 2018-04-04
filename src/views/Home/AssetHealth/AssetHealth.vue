@@ -51,7 +51,11 @@ export default {
 .top
   display: flex
   align-items: center
+  padding: 0 1em
   height: $top-height
   background-color: $main-bg
   color: $main-text
+
+.main
+  padding: 20px
 </style>
