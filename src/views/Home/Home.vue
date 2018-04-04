@@ -8,7 +8,7 @@
       </div>
     </header>
     <section>
-      <div class="overview">
+      <div v-if="overviewShow" class="overview">
         <div class="top">
           <div class="title">
             <a href="#">A</a>
@@ -27,6 +27,7 @@
       </div>
       <div class="main">
         <div class="top">
+          <a v-if="!overviewShow" :click="overviewShow = !overviewShow" href="#" class="toggle-overview">W</a>
           <nav class="tabs">
             <ul>
               <li>
@@ -56,6 +57,11 @@ export default {
   name: 'Home',
   components: {
     AssetHealth
+  },
+  data: function() {
+    return {
+      overviewShow: true
+    }
   }
 }
 </script>
