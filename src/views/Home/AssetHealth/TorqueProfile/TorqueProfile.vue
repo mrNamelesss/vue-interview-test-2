@@ -1,9 +1,15 @@
 <template>
   <div class="torque-profile-view">
-    <h3>Open</h3>
-    <OpenTorque />
-    <h3>Close</h3>
-    <OpenTorque />
+    <div v-if="!loading">
+      <h3>Open</h3>
+      <p>id = {{ id }}</p>
+      <OpenTorque />
+      <h3>Close</h3>
+      <OpenTorque />
+    </div>
+    <div v-else>
+      <p>Loading...</p>
+    </div>
   </div>
 </template>
 
@@ -16,6 +22,12 @@ export default {
   components: {
     OpenTorque,
     CloseTorque
+  },
+  props: ['id'],
+  data: function() {
+    return {
+      loading: false
+    }
   }
 }
 </script>
