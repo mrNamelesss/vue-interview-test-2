@@ -26,9 +26,17 @@ export default {
         //categoryPercentage: 0.1,
         scales: {
           xAxes: [{
+            scaleLabel: {
+              display: true,
+              labelString: 'Valve position'
+            },
             stacked: true
           }],
           yAxes: [{
+            scaleLabel: {
+              display: true,
+              labelString: 'Required torque (%)'
+            },
             stacked: true
           }]
         }
