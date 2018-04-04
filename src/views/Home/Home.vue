@@ -1,7 +1,7 @@
 <template>
   <div class="home-view">
     <h1>Home</h1>
-    <AssetHealth />
+    <router-view/>
   </div>
 </template>
 

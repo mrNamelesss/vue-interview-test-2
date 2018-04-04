@@ -1,7 +1,7 @@
 <template>
   <div class="asset-health-view">
     <h1>Asset Health</h1>
-    <TorqueProfile />
+    <router-view/>
   </div>
 </template>
 
