@@ -40,7 +40,6 @@ export default {
 
 #app
   min-height: 100vh
-  max-width: 1000px
   margin: auto
 
 .dev

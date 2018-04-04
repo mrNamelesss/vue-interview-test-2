@@ -1,7 +1,51 @@
 <template>
   <div class="home-view">
-    <h1>Home</h1>
-    <router-view/>
+    <header>
+      <h1>Predictive maintenance</h1>
+      <div class="controls">
+        <a href="#" class="user">John Smith v</a>
+        <a href="#" class="power">O</a>
+      </div>
+    </header>
+    <section>
+      <div class="overview">
+        <div class="top">
+          <div class="title">
+            <a href="#">A</a>
+            <h3>Terminal overview</h3>
+          </div>
+          <a href="#" class="toggle-overview">W</a>
+        </div>
+        <img src="https://picsum.photos/600/400" />
+        <div class="overview-text">
+          Terminal name
+          West
+          Country code
+          NLD
+          Adress
+        </div>
+      </div>
+      <div class="main">
+        <div class="top">
+          <nav class="tabs">
+            <ul>
+              <li>
+                <a href="#" class="tab">Dashboard</a>
+              </li>
+              <li>
+                <a href="#" class="tab active">Asset health</a>
+              </li>
+              <li>
+                <a href="#" class="tab">Work orders</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="content">
+          <router-view/>
+        </div>
+    </div>
+    </section>
   </div>
 </template>
 
@@ -16,6 +60,48 @@ export default {
 }
 </script>
 
-<style lang="sass">
+<style lang="sass" scoped>
+@import '../../assets/styles/variables'
+
+.home-view
+  display: flex
+  flex-direction: column
+  min-height: 100vh
+  margin: auto
+
+header
+  display: flex
+  justify-content: space-between
+  padding: 10px 0
+h1
+  margin: 0 0 0 4em
+  padding: 0.5em 0 0.5em 1em
+  border-left: 1px solid $text
+.user
+  margin: 0 20px 0 0
+  text-decoration: none
+
+section
+  display: flex
+  flex-grow: 1
+.overview
+  width: 250px
+  .top
+    display: flex
+    justify-content: space-between
+    align-items: center
+    height: $top-height
+    padding: 0.8em
+    .title
+      display: flex
+      align-items: center
+
+
+.main
+  flex-grow: 1
+  .top
+    height: $top-height
+  .content
+    padding: 20px
 
 </style>
