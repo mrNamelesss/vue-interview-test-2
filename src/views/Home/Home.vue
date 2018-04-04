@@ -33,7 +33,7 @@
                 <a href="#" class="tab">Dashboard</a>
               </li>
               <li>
-                <a href="#" class="tab active">Asset health</a>
+                <router-link to="/asset-health" class="tab active">Asset health</router-link>
               </li>
               <li>
                 <a href="#" class="tab">Work orders</a>
@@ -86,11 +86,14 @@ section
   flex-grow: 1
 .overview
   width: 250px
+  border-right: 1px solid $border-color
   .top
     display: flex
     justify-content: space-between
     align-items: center
     height: $top-height
+    background-color: $main-bg
+    color: $main-text
     padding: 0.8em
     .title
       display: flex
@@ -100,6 +103,8 @@ section
 .main
   flex-grow: 1
   .top
+    display: flex
+    align-items: center
     height: $top-height
   .content
     padding: 20px
